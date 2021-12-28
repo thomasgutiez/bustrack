@@ -19,21 +19,15 @@ const busStops = [
   // This is the map instance
   let map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/satellite-streets-v11',
+    style: 'mapbox://styles/mapbox/dark-v10',
     center: [-71.104081, 42.365554],
     zoom: 14,
   });
 
-  //function to choose map style
-  function check(buttonid) {
-    console.log(buttonid);
-    map.setStyle('mapbox://styles/mapbox/' + buttonid);
-  }
-  
   // Adding a marker to the map at the first coordinates in the array busStops. 
-  let marker = new mapboxgl.Marker({ "color": "#0000FF" }).setLngLat([-71.093729, 42.359244]).addTo(map);
+  let marker = new mapboxgl.Marker({ "color": "#DDDDDD" }).setLngLat([-71.093729, 42.359244]).addTo(map);
   // Adding markerend to the destination
-  let markerend = new mapboxgl.Marker({ "color": "#FF00FF" }).setLngLat([-71.118625, 42.374863]).addTo(map);
+  let markerend = new mapboxgl.Marker({ "color": "#A41034" }).setLngLat([-71.118625, 42.374863]).addTo(map);
   // counter here represents the index of the current bus stop
   let counter = 0;
   
@@ -50,6 +44,6 @@ const busStops = [
       counter++;
       move();
   
-    },1000);
+    },500);
   }
  
